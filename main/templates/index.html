@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{% block content%}
+    {% for car in cars %}
+        <h4>{{car.manufacturer}} {{car.model_name}}</h4>
+        <ul>
+            <li>Speed: {{car.top_speed}}</li>
+            <li>Milage: {{car.milage}}</li>
+            <li>Color: {{car.color}}</li>
+            <li>Owner: <a href="{% url 'person' car.owner.id%}">{{car.owner.first_name}}</a></li>
+        </ul>
+    {% endfor %}
+
+{% endblock %}
