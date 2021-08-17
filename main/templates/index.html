@@ -1,5 +1,11 @@
 {% extends 'base.html'%}
+{% load static %}
+{% block style%}
+<link rel='stylesheet' href='{% static "css/index.css" %}'>
+
+{% endblock %}
 {% block content%}
+<h4>all cars</h4>
     {% for car in cars %}
         <h4>{{car.manufacturer}} {{car.model_name}}</h4>
         <ul>

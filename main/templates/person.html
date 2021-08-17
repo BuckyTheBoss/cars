@@ -1,4 +1,6 @@
 {% extends 'base.html'%}
+{% load static %}
+
 {% block content%}
 <a href="{% url 'index' %}">back to homepage</a>
 <h4>Name: {{person.first_name}} {{person.last_name}}</h4>

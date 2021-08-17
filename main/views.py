@@ -4,7 +4,8 @@ from django.shortcuts import render, redirect, get_object_or_404, get_list_or_40
 # Create your views here.
 
 def index(request):
-    cars = get_list_or_404(Vehicle, color='red')
+    # cars = get_list_or_404(Vehicle, color='red')
+    cars = Vehicle.objects.all()
     return render(request, 'index.html', {'cars':cars})
 
 def person_view(request,person_id):
