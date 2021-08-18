@@ -32,5 +32,5 @@ class VehicleForm(forms.Form):
 
 class SelectPassenger(forms.Form):
     passenger = forms.ModelChoiceField(queryset=Person.objects.all())
-    vehicle = forms.ModelChoiceField(queryset=Vehicle.objects.all())
+    vehicle = forms.ModelChoiceField(queryset=Vehicle.objects.exclude(model_name='world'))
 

@@ -30,7 +30,8 @@ def add_vehicle(request):
 
             # return redirect('index')
     return render(request, 'main/add_vehicle.html', {'form':form, 'cars':cars})
-    
+
+ 
 def add_person_to_car(request):
     if request.method == "GET":
         form = SelectPassenger()
