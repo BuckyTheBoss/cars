@@ -13,6 +13,14 @@
             <li>Milage: {{car.milage}}</li>
             <li>Color: {{car.color}}</li>
             <li>Owner: <a href="{% url 'person' car.owner.id%}">{{car.owner.first_name}}</a></li>
+            
+        </ul>
+        <hr>
+        <h5>passengers</h5>
+        <ul>
+            {% for person in car.passengers.all %}
+                <li>{{person}}</li>
+            {% endfor %}
         </ul>
     {% endfor %}
 

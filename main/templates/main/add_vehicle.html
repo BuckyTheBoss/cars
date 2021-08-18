@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% block title%}
+Intake New
+{% endblock%}
+{% block content %}
+<form method='post'>
+    {% csrf_token %}
+    {{form.as_p}}
+<button class='btn btn-success' type="submit">Save</button>
+</form>
+<hr>
+{% for car in cars %}
+        <h4>{{car.manufacturer}} {{car.model_name}}</h4>
+        <ul>
+            <li>Speed: {{car.top_speed}}</li>
+            <li>Milage: {{car.milage}}</li>
+            <li>Color: {{car.color}}</li>
+            <li>Owner: <a class="btn btn-primary" href="{% url 'person' car.owner.id%}">{{car.owner.first_name}}</a></li>
+        </ul>
+    {% endfor %}
+{% endblock %}

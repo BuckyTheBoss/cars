@@ -1,9 +1,14 @@
 {% extends 'base.html'%}
 
+{% block title%}
+add passenger
+{% endblock%}
+
 {% block content %}
 <form method='post'>
     {% csrf_token %}
     {{form.as_p}}
-<button type="submit">Save</button>
+<button class='btn btn-success' type="submit">Save</button>
 </form>
+
 {% endblock %}
