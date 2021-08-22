@@ -34,3 +34,11 @@ class SelectPassenger(forms.Form):
     passenger = forms.ModelChoiceField(queryset=Person.objects.all())
     vehicle = forms.ModelChoiceField(queryset=Vehicle.objects.exclude(model_name='world'))
 
+class NewVehicleForm(forms.ModelForm):
+    class Meta:
+        model = Vehicle
+        exclude = ['passengers', 'top_speed', 'owner']
+
+class SetVehiclesColor(forms.Form):
+    vehicles = forms.ModelMultipleChoiceField(queryset=Vehicle.objects.all())
+    color = forms.CharField()

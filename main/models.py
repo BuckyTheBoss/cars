@@ -28,3 +28,6 @@ class Vehicle(models.Model):
     def __str__(self):
         return f'{self.manufacturer} {self.model_name}'
 
+    def get_rentalrate(self):
+        return self.size.rentalrate_set.filter(type=self.type).first()
+
